@@ -12,3 +12,17 @@ export interface INewsWithOutIdAndDate {
     image: string | null,
 }
 
+
+export interface IComment {
+    id: string,
+    news_id: string;
+    author: string;
+    text: string;
+}
+
+export interface ICommentWithoutId {
+    news_id: string;
+    author: string;
+    text: string;
+}
+
