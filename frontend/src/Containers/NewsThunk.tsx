@@ -1,6 +1,5 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
 import axiosApi from "../axiosApi";
-import {INewsForm} from '../types';
 
 export const getNews = createAsyncThunk(
   'news/get',
@@ -19,7 +18,7 @@ export const getOneNewsById = createAsyncThunk(
 
 export const addNews = createAsyncThunk(
   'news/add',
-  async (news: INewsForm) => {
+  async (news: FormData) => {
     await axiosApi.post(`news`, news);
   });
 

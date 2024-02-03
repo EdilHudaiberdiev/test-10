@@ -1,16 +1,1 @@
-[
-  {
-    "title": "news title 2",
-    "text": "news text 2",
-    "image": null,
-    "id": "d8e01299-b7f2-45cd-b217-a6b85d862b30",
-    "date": "2024-02-03T08:38:23.383Z"
-  },
-  {
-    "title": "news title 1",
-    "text": "news text 1",
-    "image": null,
-    "id": "36d3220e-48b0-4454-aa2b-0c880c2c905d",
-    "date": "2024-02-03T08:38:30.771Z"
-  }
-]
+[{"image":null,"id":"eafdb530-cb9a-4981-8124-a96c7254445f","date":"2024-02-03T10:36:52.579Z"},{"image":null,"id":"1b3c25b4-2e59-4b49-a8a3-bf37ead0ce6e","date":"2024-02-03T10:39:41.097Z"},{"title":"dfbbdfb","text":"dfbdfbdfb","image":null,"id":"993035bb-f21e-4ac8-8e37-627648c2f5cd","date":"2024-02-03T10:40:40.505Z"},{"title":"dfvgdfg","text":"fdgdfg","image":null,"id":"71b5d15b-93d6-4f78-b002-e14ced65acb7","date":"2024-02-03T10:41:58.787Z"},{"title":"fgf","text":"gfnfgn","image":null,"id":"10d5092f-6c54-42e8-930e-c2aa097b833a","date":"2024-02-03T10:42:28.744Z"},{"title":"fbfgb","text":"fgbfgb","image":null,"id":"8052a53a-6a8d-4f2c-88f2-68ecf5d18f58","date":"2024-02-03T10:42:46.590Z"},{"title":"fgnfgn","text":"fgnfgn","image":null,"id":"73871969-d940-4a42-859f-b66c120fe7fb","date":"2024-02-03T10:42:53.217Z"},{"title":"fnghn","text":"ghnghn","image":null,"id":"b0f51776-2a01-4f04-8d5d-508c82a8fab1","date":"2024-02-03T10:43:16.036Z"},{"title":"fgnfgn","text":"fgnfgn","image":null,"id":"ca76ad92-8e47-4ca2-8ca2-e03b8dc26e50","date":"2024-02-03T10:43:37.031Z"},{"title":"sdvsdfv","text":"dfvdfv","image":null,"id":"c700d781-6042-48ff-aa0b-c163addb49fc","date":"2024-02-03T10:44:23.204Z"},{"title":"ghvb","text":"v vb ","image":null,"id":"48b03f2e-504f-4b74-bf3f-1f5c250fcebd","date":"2024-02-03T10:45:47.843Z"},{"title":"fgbfg","text":"bfgbfgb","image":null,"id":"f9407459-8548-4b6c-9005-ca6adc2238ad","date":"2024-02-03T10:48:01.073Z"},{"title":"dfbdfb","text":"dfbdfbdfb","image":null,"id":"47d1b1a6-9d5e-4242-98b4-26f6957cb2de","date":"2024-02-03T10:48:13.826Z"},{"title":"fdbdfb","text":"dfbdfb","image":null,"id":"65e3142d-a33c-4e6a-a46e-c2247740137c","date":"2024-02-03T10:48:17.963Z"},{"title":"sdvsd","text":"vsdvsdv","image":null,"id":"05d8012d-5893-4866-be6b-48f5566b0f01","date":"2024-02-03T10:48:26.194Z"},{"title":"fdgfg","text":"dfgdfg","image":null,"id":"eff0f510-e4d9-4336-bd31-999d40d8afe1","date":"2024-02-03T10:48:45.317Z"},{"title":"dsvsdv","text":"sdvsdv","image":null,"id":"7e8d6f2d-5c89-4966-9ad6-c3aafeae39bb","date":"2024-02-03T10:49:04.597Z"}]
