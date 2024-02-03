@@ -1,6 +1,7 @@
 import {promises as fs} from 'fs';
 import * as crypto from 'crypto';
-import {INews, INewsWithOutIdAndDate} from "./types";
+import {IComment, INews, INewsWithOutIdAndDate} from "./types";
+import commentsDB from "./commentsDB";
 
 const fileName = './news.json';
 let data: INews[] = [];
@@ -47,6 +48,13 @@ const newsDB = {
             }
 
             if (news) {
+                let dataComments: IComment[] = await commentsDB.getComments();
+                console.log(`This 1 ${dataComments}`)
+
+                dataComments = dataComments.filter(comment => comment.news_id !== id);
+                console.log(`This 2 ${dataComments}`)
+                await commentsDB.save(dataComments);
+
                 data = data.filter(news => news.id !== id);
                 await this.save();
                 return 'News was deleted';

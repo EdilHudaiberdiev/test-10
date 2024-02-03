@@ -33,10 +33,12 @@ newsRouter.get('/:id', async (req, res) => {
 
     let news = await newsDB.findNewsById(req.params.id);
 
+    if (news === undefined || news === null) {
+        res.status(404).send({error: "news not found"});
+    }
+
     if (news !== null) {
         res.send(news);
-    } else {
-        res.status(404).send({error: "news not found"});
     }
 });
 

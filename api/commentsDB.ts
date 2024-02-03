@@ -55,8 +55,9 @@ const commentsDB = {
     async getComments() {
        return data
     },
-    async save() {
-        return fs.writeFile(fileName, JSON.stringify(data));
+    async save(dataToUpdate?: IComment[]) {
+        if (dataToUpdate === undefined) dataToUpdate = data;
+        return fs.writeFile(fileName, JSON.stringify(dataToUpdate));
     },
 };
 
