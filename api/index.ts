@@ -3,14 +3,15 @@ import newsRouter from "./Routers/news";
 import newsDB from "./newsDB";
 import commentsRouter from "./Routers/comments";
 import commentsDB from "./commentsDB";
-
-const cors = require('cors');
+const cors = require('cors')
 
 const app = express();
 const port = 8000;
 
 app.use(express.json());
+app.use(express.static('public'));
 app.use(cors());
+
 app.use('/news', newsRouter);
 app.use('/comments', commentsRouter);
 

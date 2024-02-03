@@ -19,8 +19,11 @@ const Home = () => {
 
 
   return (
-    <>
-      <Button variant="contained" onClick={() =>  Navigation('/new-post')}>Add new post</Button>
+    <div className="container">
+      <div className="text-end py-5">
+        <Button variant="contained" onClick={() =>  Navigation('/new-post')}>Add new post</Button>
+      </div>
+
 
       {loading ? <Spinner/> :
         <>{news.length > 0 ?
@@ -33,7 +36,7 @@ const Home = () => {
         }
         </>
       }
-    </>
+    </div>
   );
 };
 

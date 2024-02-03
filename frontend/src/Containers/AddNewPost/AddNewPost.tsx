@@ -42,7 +42,7 @@ const AddNewPost = () => {
     }
   };
 
-  const changeForm = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const changeForm = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setNewNews((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
@@ -60,9 +60,9 @@ const AddNewPost = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={onFormSubmit}>
-        <h2 className="text-center mb-4">Add news</h2>
+    <div className="container">
+      <form onSubmit={onFormSubmit} className="w-50 mx-auto">
+        <h2 className="text-center my-4">Add new news</h2>
         {error ? <Alert severity="error">Title and text must be field</Alert> : null}
 
         <div className="mb-3 w-75 mx-auto">
@@ -80,15 +80,14 @@ const AddNewPost = () => {
 
         <div className="mb-3 w-75 mx-auto">
           <label htmlFor="name" className="form-label">Text</label>
-          <input
-            type="text"
+          <textarea
             name="text"
             id="text"
             required
             className="form-control"
             value={newNews.text}
             onChange={changeForm}
-          />
+          ></textarea>
         </div>
 
         <div className="mb-3 w-75 mx-auto">

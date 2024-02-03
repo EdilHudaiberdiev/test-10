@@ -49,10 +49,7 @@ const newsDB = {
 
             if (news) {
                 let dataComments: IComment[] = await commentsDB.getComments();
-                console.log(`This 1 ${dataComments}`)
-
                 dataComments = dataComments.filter(comment => comment.news_id !== id);
-                console.log(`This 2 ${dataComments}`)
                 await commentsDB.save(dataComments);
 
                 data = data.filter(news => news.id !== id);

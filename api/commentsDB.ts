@@ -36,6 +36,21 @@ const commentsDB = {
             }
         }
     },
+    async findCommentByNewsId(id: string) {
+
+        if (data.length > 0 && id) {
+            let comments: IComment[] = [];
+
+            data.forEach(comment => {
+                if (comment.news_id === id) {
+                    comments.push(comment);
+                }
+            });
+
+            return comments.reverse();
+        }
+    },
+
 
     async deleteCommentById(id: string) {
         if (data.length > 0 && id) {

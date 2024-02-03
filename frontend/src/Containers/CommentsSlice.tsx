@@ -6,12 +6,14 @@ import {addComment, deleteComment, getCommentByNewsId} from './CommentsThunk';
 interface commentsState {
   comments: IComment[];
   isLoading: boolean;
+  addLoading: boolean;
   isError: boolean;
 }
 
 const initialState: commentsState = {
   comments: [],
   isLoading: false,
+  addLoading: false,
   isError: false,
 };
 
@@ -23,14 +25,14 @@ const CommentsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(addComment.pending, (state) => {
-      state.isLoading = true;
+      state.addLoading = true;
       state.isError = false;
     });
     builder.addCase(addComment.fulfilled, (state) => {
-      state.isLoading = false;
+      state.addLoading = false;
     });
     builder.addCase(addComment.rejected, (state) => {
-      state.isLoading = false;
+      state.addLoading = false;
       state.isError = true;
     });
 

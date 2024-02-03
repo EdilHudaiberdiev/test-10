@@ -34,8 +34,7 @@ commentsRouter.get('/', async (req, res) => {
     let comments: IComment[] = [];
 
     if (req.query.news_id) {
-        let comment = await commentsDB.findCommentById(String(req.query.news_id));
-
+        let comment = await commentsDB.findCommentByNewsId(String(req.query.news_id));
         if (comment !== null) {
             res.send(comment);
         } else {
