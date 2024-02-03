@@ -62,7 +62,7 @@ const commentsDB = {
 
             if (comment) {
                 data = data.filter(comment => comment.id !== id);
-                await this.save();
+                await this.save(data);
                 return 'Comment was deleted';
             }
         }

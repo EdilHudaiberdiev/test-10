@@ -32,7 +32,7 @@ const FullNews = () => {
   };
 
 
-  return params.id && (
+  return (
     <div className="container">
       {loadingNews ? <Spinner/> :
         <>
