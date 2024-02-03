@@ -23,6 +23,35 @@ const commentsDB = {
 
         return newComment;
     },
+
+    async findCommentById(id: string) {
+
+        if (data.length > 0 && id) {
+            let comment: IComment | undefined = data.find(comments => comments.id === id);
+
+            if (comment !== undefined) {
+                return comment;
+            } else  {
+                return null;
+            }
+        }
+    },
+
+    async deleteCommentById(id: string) {
+        if (data.length > 0 && id) {
+            let comment = await this.findCommentById(id);
+
+            if (comment === null) {
+                return null;
+            }
+
+            if (comment) {
+                data = data.filter(comment => comment.id !== id);
+                await this.save();
+                return 'Comment was deleted';
+            }
+        }
+    },
     async save() {
         return fs.writeFile(fileName, JSON.stringify(data));
     },

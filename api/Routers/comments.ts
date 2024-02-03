@@ -26,5 +26,19 @@ commentsRouter.post('/',  async (req, res) => {
     }
 });
 
+commentsRouter.delete('/:id', async (req, res) => {
+    if (!req.params.id) {
+        res.status(400).send({"error": "Id params must be in url"});
+    }
+
+    let comment = await commentsDB.deleteCommentById(req.params.id);
+
+    if (comment !== null) {
+        res.send(comment);
+    } else {
+        res.status(404).send({error: "comment not found"});
+    }
+});
+
 
 export default commentsRouter
