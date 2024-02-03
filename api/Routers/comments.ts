@@ -12,6 +12,10 @@ commentsRouter.post('/',  async (req, res) => {
 
     let checkNewsId = await newsDB.findNewsById(req.body.news_id);
 
+    if (checkNewsId === null) {
+        return res.status(404).send({error: "news not found"});
+    }
+
     if (checkNewsId !== null) {
         let newComment: ICommentWithoutId = {
             news_id: req.body.news_id,
@@ -20,9 +24,9 @@ commentsRouter.post('/',  async (req, res) => {
         };
 
         newComment = await commentsDB.addCommentsToJson(newComment);
-        res.send(newComment);
+        return res.send(newComment);
     } else {
-        res.status(404).send({error: "news_id not found"});
+        return res.status(404).send({error: "news_id not found"});
     }
 });
 

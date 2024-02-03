@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "title": "news title 2",
+    "text": "news text 2",
+    "image": null,
+    "id": "d8e01299-b7f2-45cd-b217-a6b85d862b30",
+    "date": "2024-02-03T08:38:23.383Z"
+  },
+  {
+    "title": "news title 1",
+    "text": "news text 1",
+    "image": null,
+    "id": "36d3220e-48b0-4454-aa2b-0c880c2c905d",
+    "date": "2024-02-03T08:38:30.771Z"
+  }
+]
