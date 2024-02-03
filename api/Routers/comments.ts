@@ -1,5 +1,5 @@
 import {Router} from 'express';
-import {ICommentWithoutId} from "../types";
+import {IComment, ICommentWithoutId} from "../types";
 import commentsDB from "../commentsDB";
 import newsDB from "../newsDB";
 
@@ -25,6 +25,24 @@ commentsRouter.post('/',  async (req, res) => {
         res.status(404).send({error: "news_id not found"});
     }
 });
+
+commentsRouter.get('/', async (req, res) => {
+    let comments: IComment[] = [];
+
+    if (req.query.news_id) {
+        let comment = await commentsDB.findCommentById(String(req.query.news_id));
+
+        if (comment !== null) {
+            res.send(comment);
+        } else {
+            res.status(404).send({error: "comment not found"});
+        }
+    } else {
+        comments = await commentsDB.getComments();
+        res.send(comments);
+    }
+});
+
 
 commentsRouter.delete('/:id', async (req, res) => {
     if (!req.params.id) {

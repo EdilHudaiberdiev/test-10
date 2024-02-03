@@ -52,6 +52,9 @@ const commentsDB = {
             }
         }
     },
+    async getComments() {
+       return data
+    },
     async save() {
         return fs.writeFile(fileName, JSON.stringify(data));
     },
