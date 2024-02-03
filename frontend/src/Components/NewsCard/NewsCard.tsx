@@ -6,6 +6,7 @@ import {useDispatch} from 'react-redux';
 import {deleteNews, getNews} from '../../Containers/NewsThunk';
 import {apiUrl} from '../../constants';
 import dayjs from 'dayjs';
+import {NavLink} from 'react-router-dom';
 
 interface Props {
   news: INewsWithoutText
@@ -35,6 +36,9 @@ const NewsCard:React.FC<Props> = ({news}) => {
           : null
         }
 
+        <NavLink to={`/news/${news.id}`} className="navbar-brand d-flex ">
+          <p className="me-2">Read more</p>
+        </NavLink>
 
         <button
           onClick={() => deleteNewsById(news.id)}
