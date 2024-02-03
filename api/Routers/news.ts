@@ -32,7 +32,27 @@ newsRouter.get('/:id', async (req, res) => {
     }
 
     let news = await newsDB.findNewsById(req.params.id);
-    res.send(news);
+
+    if (news !== null) {
+        res.send(news);
+    } else {
+        res.status(404).send({error: "news not found"});
+    }
+});
+
+newsRouter.delete('/:id', async (req, res) => {
+    if (!req.params.id) {
+        res.status(400).send({"error": "Id params must be in url"});
+    }
+
+    let news = await newsDB.deleteNewsById(req.params.id);
+
+    if (news !== null) {
+        res.send(news);
+    } else {
+        res.status(404).send({error: "news not found"});
+    }
+
 });
 
 

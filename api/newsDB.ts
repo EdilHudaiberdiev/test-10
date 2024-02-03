@@ -33,7 +33,23 @@ const newsDB = {
             if (news !== undefined) {
                 return news;
             } else  {
-                return {error: "news not found"};
+                return null;
+            }
+        }
+    },
+
+    async deleteNewsById(id: string) {
+        if (data.length > 0 && id) {
+            let news = await this.findNewsById(id);
+
+            if (news === null) {
+                return null;
+            }
+
+            if (news) {
+                data = data.filter(news => news.id !== id);
+                await this.save();
+                return 'News was deleted';
             }
         }
     },
