@@ -1,6 +1,6 @@
 import {Router} from 'express';
 import newsDB from "../newsDB";
-import {INews, INewsWithOutIdAndDate} from "../types";
+import {INewsWithOutIdAndDate} from "../types";
 import {imagesUpload} from "../multer";
 const newsRouter = Router();
 
@@ -15,16 +15,23 @@ newsRouter.post('/', imagesUpload.single('image'), async (req, res) => {
         image: req.file ? req.file.filename : null,
     };
 
-    newNews = await newsDB.addCategoryToJson(newNews);
+    newNews = await newsDB.addNewsToJson(newNews);
     res.send(newNews);
 });
 
 newsRouter.get('/', async (req, res) => {
-    let news: INews[];
-
-    news = await newsDB.getNews();
+    let news = await newsDB.getNews();
     news = news.reverse();
 
+    res.send(news);
+});
+
+newsRouter.get('/:id', async (req, res) => {
+    if (!req.params.id) {
+        res.status(400).send({"error": "Id params must be in url"});
+    }
+
+    let news = await newsDB.findNewsById(req.params.id);
     res.send(news);
 });
 

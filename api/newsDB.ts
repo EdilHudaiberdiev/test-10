@@ -14,7 +14,7 @@ const newsDB = {
             data = [];
         }
     },
-    async addCategoryToJson(news: INewsWithOutIdAndDate) {
+    async addNewsToJson(news: INewsWithOutIdAndDate) {
         const id = crypto.randomUUID();
         const date = new Date().toISOString();
         const newNews = {...news, id,  date}
@@ -24,11 +24,30 @@ const newsDB = {
 
         return newNews;
     },
+
+    async findNewsById(id: string) {
+
+        if (data.length > 0 && id) {
+            let news: INews | undefined = data.find(news => news.id === id);
+
+            if (news !== undefined) {
+                return news;
+            } else  {
+                return {error: "news not found"};
+            }
+        }
+    },
+
     async save() {
         return fs.writeFile(fileName, JSON.stringify(data));
     },
     async getNews() {
-        return data;
+        return data.map(news => ({
+            id: news.id,
+            title: news.title,
+            image: news.image,
+            date: news.date
+        }));
     },
 };
 
